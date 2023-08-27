@@ -1,0 +1,16 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --color-lightn: #c4cfde;
+  --color-subtitle: #ff014f;
+  --bg-color-1: linear-gradient(145deg, #1e2024, #23272b);
+  --bg-color-2: #212428;
+  --shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+  --shadow-2: inset 21px 21px 19px #181a1d, inset -21px -21px 19px #202225;
+}
+
+.body {
+  background-color: #212428;
+}

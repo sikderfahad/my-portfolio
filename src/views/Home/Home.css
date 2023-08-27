@@ -1,0 +1,231 @@
+.nav-scrolled {
+  background-color: #212428de;
+  box-shadow: var(--shadow-1);
+  position: sticky;
+  backdrop-filter: blur(15px);
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  /* animation: headerSlideDown 0.5s ease forwards; */
+  /* animation: headerSlideDown 0.5s ease 0 forwards; */
+}
+
+@keyframes headerSlideDown {
+  0% {
+    margin-top: -100px;
+    opacity: 0;
+  }
+
+  30% {
+    margin-top: -50px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+/* ------------------------------ 
+ BANNER 
+ ------------------------------ */
+
+.banner-thumb {
+  position: relative;
+  /* z-index: 2; */
+}
+.banner-thumb::before {
+  position: absolute;
+  /* z-index: -1; */
+  width: 100%;
+  height: calc(100% - 50px);
+  content: "";
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: var(--bg-color-1);
+  box-shadow: var(--shadow-1);
+  border-radius: 6px;
+}
+
+.banner-thumb:hover .banner-thumb::before {
+  background: var(--bg-color-2);
+}
+
+.list {
+  /* margin: 10px 12px; */
+  line-height: 55px;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  box-shadow: var(--shadow-1);
+}
+
+.link {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: 0.4s;
+  background: var(--bg-color-1);
+  box-shadow: var(--shadow-1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link:hover {
+  transform: translateY(-3px);
+  background: var(--bg-color-2);
+  color: var(--color-subtitle);
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  transition: 0.4s;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right bottom, #212428, #16181c);
+  opacity: 0;
+  z-index: -1;
+}
+
+.link:hover::before {
+  opacity: 1;
+}
+
+/* ----------------------------
+Section Title
+------------------------------ */
+
+.section-title {
+  line-height: 1.2;
+  color: var(--color-lightn);
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.section-sebtitle {
+  color: var(--color-subtitle);
+  letter-spacing: 1px;
+  display: block;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+/* ----------------------------
+PORTFOLIO
+------------------------------ */
+
+.card-box {
+  text-align: left;
+  transition: 0.5s all ease-in-out;
+  border-radius: 10px;
+  background: var(--bg-color-1);
+  box-shadow: var(--shadow-1);
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.card-box::before {
+  content: "";
+  position: absolute;
+  transition: 0.4s;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right bottom, #212428, #16181c);
+  opacity: 0;
+  z-index: -1;
+}
+
+.card-box:hover::before {
+  opacity: 1;
+}
+
+.card-body {
+  transform: translateY(20px);
+  transition: 0.4s;
+}
+
+.card-box:hover .card-body {
+  transform: translateY(0px);
+}
+
+.card-body:hover .card-actions {
+  display: revert;
+}
+
+.git-line {
+  border-radius: 5px;
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  transition: 1s;
+  background-size: 250% 300%;
+  animation: animatedgradient 4s ease infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.git-code {
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  transition: 1s;
+  background-size: 250% 300%;
+  /* animation: animatedgradient 4s ease infinite; */
+  animation: animatedgradient 4s ease 2s infinite;
+  animation-iteration-count: infinite;
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

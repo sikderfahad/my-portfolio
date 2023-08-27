@@ -135,7 +135,8 @@ Section Title
 PORTFOLIO
 ------------------------------ */
 
-.card-box {
+.card-box,
+.contact-box {
   text-align: left;
   transition: 0.5s all ease-in-out;
   border-radius: 10px;
@@ -228,4 +229,73 @@ PORTFOLIO
 
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* -------------------------------- 
+CONTACT
+ -------------------------------- */
+
+.form-field {
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: #191b1e;
+  border-radius: 6px;
+  height: 55px;
+  transition: 0.4s;
+  border: 2px solid #191b1e;
+  padding: 0 15px;
+  font-size: 14px;
+  /* font-family: var(--font-secondary); */
+  color: var(--color-lightn) !important;
+  box-shadow: var(--inner-shadow);
+  letter-spacing: 1px;
+}
+
+.form-field:focus,
+.field-textarea:focus {
+  outline: 2px solid var(--color-subtitle);
+}
+
+.field-label {
+  font-size: 12px;
+  color: #a0a8b3;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  /* font-family: var(--font-secondary); */
+  margin-bottom: 14px;
+  text-align: left;
+  display: block;
+}
+
+.field-textarea {
+  border: none;
+  outline: none;
+  min-height: 216px;
+  background-color: #191b1e;
+  border-radius: 6px;
+  padding: 0;
+  transition: 0.4s;
+  border: 2px solid #191b1e;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 18px;
+  /* font-family: var(--font-secondary); */
+  color: var(--color-lightn);
+  box-shadow: var(--inner-shadow);
+  letter-spacing: 1px;
+  resize: none;
+}
+
+.btn-submit {
+  border-radius: 6px;
+  background: linear-gradient(145deg, #1e2024, #23272b);
+  box-shadow: var(--shadow-1);
+  transition: 0.4s;
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: 500;
+  border: 0 none;
 }

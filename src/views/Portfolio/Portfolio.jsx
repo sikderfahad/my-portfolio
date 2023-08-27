@@ -5,11 +5,11 @@ const Portfolio = () => {
   return (
     <div>
       <Title
-        title={"My Portfolio"}
-        subtitle={"VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK"}
+        title={"My Last Project"}
+        subtitle={"VISIT MY PROJECT AND KEEP YOUR FEEDBACK"}
       ></Title>
 
-      <div className="mt-24 w-11/12 md:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="mt-24 w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
         <CardBox
           img={"https://i.ibb.co/JBmpT9T/pf1.png"}
           name={"Nota Corda"}
@@ -74,9 +74,6 @@ const Portfolio = () => {
           }
         ></CardBox>
       </div>
-      <br />
-      <br />
-      <br />
     </div>
   );
 };

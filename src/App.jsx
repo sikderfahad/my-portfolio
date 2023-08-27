@@ -1,11 +1,12 @@
+import Contact from "./views/Contact/Contact";
 import Home from "./views/Home/Home";
 import Portfolio from "./views/Portfolio/Portfolio";
 import Skills from "./views/Skills/Skills";
 
-export const Divider = () => {
+export const Divider = ({ id }) => {
   return (
-    <div className="w-10/12 mx-auto">
-      <hr className="mt-20 mb-20 border-1 border-[#121415]" />
+    <div id={id} className="w-10/12 mx-auto">
+      <hr className="mt-[100px] mb-[100px] border-1 border-[#121415]" />
     </div>
   );
 };
@@ -17,16 +18,22 @@ const App = () => {
         <Home></Home>
       </div>
 
-      <Divider></Divider>
+      <Divider id={"skills"}></Divider>
 
-      <div id="skills">
+      <div>
         <Skills></Skills>
       </div>
 
-      <Divider></Divider>
+      <Divider id={"project"}></Divider>
 
-      <div id="portfolio">
+      <div>
         <Portfolio></Portfolio>
+      </div>
+
+      <Divider id={"contact"}></Divider>
+
+      <div>
+        <Contact></Contact>
       </div>
     </div>
   );

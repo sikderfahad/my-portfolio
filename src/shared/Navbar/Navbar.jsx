@@ -12,8 +12,8 @@ const Navbar = () => {
       path: "#skills",
     },
     {
-      title: "portfolio",
-      path: "#portfolio",
+      title: "project",
+      path: "#project",
     },
     {
       title: "resume",
@@ -25,7 +25,7 @@ const Navbar = () => {
     },
     {
       title: "contact",
-      path: "/contact",
+      path: "#contact",
     },
   ];
 
@@ -78,7 +78,7 @@ const Navbar = () => {
       <div
         id="navbar-home"
         className={`w-11/12 ${
-          scrolled ? "lg:w-10/12" : "lg:w-11/12"
+          scrolled ? "xl:w-10/12" : "xl:w-11/12"
         } navbar  mx-auto `}
       >
         <div className="w-3/4 md:w-10/12 lg:w-1/2">

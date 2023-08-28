@@ -1,18 +1,12 @@
 import Typewriter from "typewriter-effect";
+import Message from "../components/Loader/Message/Message";
 
 const Test = () => {
   return (
     <div>
-      {/* <Typewriter
-        onInit={(typewriter) => {
-          typewriter
-            .typeString("GeeksForGeeks")
-            .pauseFor(1000)
-            .deleteAll()
-            .typeString("Welcomes You")
-            .start();
-        }}
-      /> */}
+      <div>
+        <Message></Message>
+      </div>
 
       <Typewriter
         options={{

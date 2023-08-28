@@ -1,7 +1,42 @@
+import { useRef, useState } from "react";
 import SocialFind from "../../shared/SocialFind/SocialFind";
 import Title from "../../shared/Title/Title";
+import emailjs from "@emailjs/browser";
+import Message from "../../components/Loader/Message/Message";
+import { ToastMsgSuc } from "../../components/Toast/ToastMsg";
 
 const Contact = () => {
+  const form = useRef();
+
+  const [msgLoading, setMsgLoading] = useState(false);
+
+  const sendEmail = (e) => {
+    setMsgLoading(true);
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_cfxb33r",
+        "template_qift4wn",
+        form.current,
+        "dh0DQaXQCyYddJUT-"
+      )
+      .then(
+        (result) => {
+          // console.log(result.text);
+          if (result.text === "OK") {
+            ToastMsgSuc("🎉 Your response was send!");
+            setMsgLoading(false);
+            e.target.reset();
+          }
+        },
+        (error) => {
+          console.log(error.text);
+          setMsgLoading(false);
+        }
+      );
+  };
+
   return (
     <div>
       <Title subtitle={"contact"} title={"Contact With Me"}></Title>
@@ -41,7 +76,11 @@ const Contact = () => {
         </div>
 
         <div className=" w-full xl:w-[65%]">
-          <form className="contact-box p-5 md:p-6">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="contact-box p-5 md:p-6"
+          >
             {/* Name & Phone */}
             <div className="w-full flex flex-col xl:flex-row gap-0 xl:gap-8">
               <div className="w-full xl:w-1/2">
@@ -49,7 +88,7 @@ const Contact = () => {
                   <p>
                     <label
                       className="field-label uppercase"
-                      htmlFor="contact-name"
+                      htmlFor="from_name"
                     >
                       your name
                     </label>
@@ -57,8 +96,9 @@ const Contact = () => {
                       <input
                         className="form-field"
                         type="text"
-                        name="contact-name"
-                        id="contact-name"
+                        name="from_name"
+                        id="from_name"
+                        required
                       />
                     </span>
                   </p>
@@ -69,7 +109,7 @@ const Contact = () => {
                   <p>
                     <label
                       className="field-label uppercase"
-                      htmlFor="contact-number"
+                      htmlFor="from_phone"
                     >
                       your number
                     </label>
@@ -77,8 +117,9 @@ const Contact = () => {
                       <input
                         className="form-field"
                         type="number"
-                        name="contact-number"
-                        id="contact-number"
+                        name="from_phone"
+                        id="from_phone"
+                        required
                       />
                     </span>
                   </p>
@@ -90,18 +131,16 @@ const Contact = () => {
             <div className="w-full">
               <div className="form-group mb-5">
                 <p>
-                  <label
-                    className="field-label uppercase"
-                    htmlFor="contact-email"
-                  >
+                  <label className="field-label uppercase" htmlFor="reply_to">
                     email
                   </label>
                   <span>
                     <input
                       className="form-field"
                       type="email"
-                      name="contact-email"
-                      id="contact-email"
+                      name="reply_to"
+                      id="reply_to"
+                      required
                     />
                   </span>
                 </p>
@@ -114,37 +153,35 @@ const Contact = () => {
                 <p>
                   <label
                     className="field-label uppercase"
-                    htmlFor="contact-sub"
+                    htmlFor="from_subject"
                   >
                     subject
                   </label>
                   <span>
                     <input
                       className="form-field"
-                      type="email"
-                      name="contact-sub"
-                      id="contact-sub"
+                      type="text"
+                      name="from_subject"
+                      id="from_subject"
+                      required
                     />
                   </span>
                 </p>
               </div>
             </div>
 
-            {/* Subject */}
+            {/* Message */}
             <div className="w-full">
               <div className="form-group mb-5">
                 <p>
-                  <label
-                    className="field-label uppercase"
-                    htmlFor="contact-message"
-                  >
+                  <label className="field-label uppercase" htmlFor="message">
                     message
                   </label>
                   <span>
                     <textarea
                       className="field-textarea w-full"
-                      name="contact-message"
-                      id="contact-message"
+                      name="message"
+                      id="message"
                       cols="30"
                       rows="10"
                     ></textarea>
@@ -159,7 +196,13 @@ const Contact = () => {
               className="btn-submit translate-y-1 hover:translate-y-0 duration-100 uppercase w-full block h-14"
               type="submit"
             >
-              send message
+              {msgLoading ? (
+                <span className="inline-block mx-auto">
+                  <Message></Message>
+                </span>
+              ) : (
+                <span>send message</span>
+              )}
             </button>
           </form>
         </div>

@@ -1,12 +1,17 @@
+import Footer from "./shared/Footer/Footer";
 import Contact from "./views/Contact/Contact";
 import Home from "./views/Home/Home";
 import Portfolio from "./views/Portfolio/Portfolio";
 import Skills from "./views/Skills/Skills";
 
-export const Divider = ({ id }) => {
+export const Divider = ({ id, className }) => {
   return (
-    <div id={id} className="w-10/12 mx-auto">
-      <hr className="mt-[100px] mb-[100px] border-1 border-[#121415]" />
+    <div id={id} className={`w-10/12 mx-auto `}>
+      <hr
+        className={`${
+          className ? className : "mt-[100px] mb-[100px]"
+        }  border-1 border-[#121415]`}
+      />
     </div>
   );
 };
@@ -34,6 +39,10 @@ const App = () => {
 
       <div>
         <Contact></Contact>
+      </div>
+
+      <div>
+        <Footer></Footer>
       </div>
     </div>
   );

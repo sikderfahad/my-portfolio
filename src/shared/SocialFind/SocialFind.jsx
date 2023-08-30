@@ -32,7 +32,7 @@ const SocialFind = () => {
           <li className="list mx-[10px] my-[12px]">
             <Link
               className="link"
-              to="https://www.linkedin.com/in/sajedul-islam-08950722a/"
+              to="https://www.linkedin.com/in/developer-sajedul/"
               title="Linkedin"
             >
               <FiLinkedin className="text-2xl"></FiLinkedin>

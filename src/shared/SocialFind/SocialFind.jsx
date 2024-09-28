@@ -15,6 +15,7 @@ const SocialFind = () => {
             <Link
               className="link"
               title="Facebook"
+              target="_blank"
               to="https://www.facebook.com/sikderfahad003/"
             >
               <FiFacebook className="text-2xl"></FiFacebook>
@@ -24,6 +25,7 @@ const SocialFind = () => {
             <Link
               className="link"
               title="Twitter"
+              target="_blank"
               to="https://twitter.com/SikDerMDFahaD1"
             >
               <FiTwitter className="text-2xl"></FiTwitter>
@@ -32,6 +34,7 @@ const SocialFind = () => {
           <li className="list mx-[10px] my-[12px]">
             <Link
               className="link"
+              target="_blank"
               to="https://www.linkedin.com/in/developer-sajedul/"
               title="Linkedin"
             >

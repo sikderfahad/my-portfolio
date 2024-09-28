@@ -41,6 +41,7 @@ const CardBox = ({
             <div>
               <Link
                 to={live}
+                target="_blank"
                 className="text-white hover:text-[--color-subtitle] duration-300"
               >
                 View Live →
@@ -56,6 +57,7 @@ const CardBox = ({
                   title="view client side code repository"
                   className="font-medium git-code duration-300"
                   to={client}
+                  target="_blank"
                 >
                   Client
                 </Link>
@@ -63,6 +65,7 @@ const CardBox = ({
                   title="view server side code repository"
                   className="font-medium git-code hover:text-[--color-subtitle] duration-300"
                   to={server}
+                  target="_blank"
                 >
                   Server
                 </Link>

@@ -1,19 +1,8 @@
 import { Link } from "react-router-dom";
 import { BsGithub } from "react-icons/bs";
 
-const CardBox = ({
-  img,
-  name,
-  logo,
-  nameColor,
-  f1,
-  f2,
-  f3,
-  live,
-  client,
-  server,
-}) => {
-  const featureBox = [f1, f2, f3];
+const CardBox = ({ project }) => {
+  const { img, nameColor, name, featurs, live, client, server } = project;
   return (
     <div className="card-box">
       <div className="card">
@@ -22,15 +11,17 @@ const CardBox = ({
         </figure>
         <div className="card-body px-4 md:px-8 clear-left gap-4">
           {name && (
-            <h2 style={{ color: nameColor }} className="card-title text-2xl ">
+            <h2
+              style={{ color: nameColor }}
+              className="card-title capitalize text-2xl "
+            >
               {name}
             </h2>
           )}
-          {logo && <img className="w-[150px]" src={logo} />}
           <div>
             <h1 className="text-xl font-medium text-white">Features :</h1>
             <ul className="list-disc ps-4 mt-2 flex flex-col gap-2">
-              {featureBox.map((feature) => (
+              {featurs.map((feature) => (
                 <li key={feature} className="text-sm">
                   {feature}
                 </li>
@@ -84,9 +75,6 @@ const CardBox = ({
               ></div>
             </div>
           </div>
-          {/* <div className="card-actions justify-start">
-                <button className="text-[--color-subtitle]">View more ▶</button>
-              </div> */}
         </div>
       </div>
     </div>
